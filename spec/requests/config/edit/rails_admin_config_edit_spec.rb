@@ -765,13 +765,13 @@ describe "RailsAdmin Config DSL Edit Section" do
     it "should add Javascript to enable CodeMirror" do
       RailsAdmin.config Draft do
         edit do
-          fields :notes do
+          field :notes do
             codemirror true
           end
         end
       end
       visit new_path(:model_name => "draft")
-      should have_selector("script", :text => /codemirror\.replace.*?draft_notes/)
+      should have_selector("script", :text => /CodeMirror\.fromTextArea.*?draft_notes/)
     end
   end
 
