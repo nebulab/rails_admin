@@ -7,3 +7,8 @@
   = form.javascript_for(field, :modal => false) do
     :plain
       CKEDITOR.replace('#{form.dom_id(field)}', { customConfig : '#{field.ckeditor_config_js.html_safe}' });
+
+- if field.codemirror
+  = form.javascript_for(field) do
+    :plain
+      myCodeMirror = CodeMirror.fromTextArea(document.getElementById('#{form.dom_id(field)}'));
