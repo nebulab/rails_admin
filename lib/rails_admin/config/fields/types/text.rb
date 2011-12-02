@@ -21,6 +21,11 @@ module RailsAdmin
             "/javascripts/ckeditor/config.js"
           end
 
+          # CodeMirror is disabled by default
+          register_instance_option(:codemirror) do
+            false
+          end
+          
           register_instance_option(:html_attributes) do
             {
               :cols => "48",
