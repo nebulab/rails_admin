@@ -11,4 +11,4 @@
 - if field.codemirror
   = form.javascript_for(field) do
     :plain
-      myCodeMirror = CodeMirror.fromTextArea(document.getElementById('#{form.dom_id(field)}'));
+      myCodeMirror = CodeMirror.fromTextArea(document.getElementById('#{form.dom_id(field)}'), {mode : "#{field.codemirror[:mode]}"});

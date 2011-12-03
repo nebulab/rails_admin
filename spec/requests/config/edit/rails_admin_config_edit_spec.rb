@@ -766,7 +766,9 @@ describe "RailsAdmin Config DSL Edit Section" do
       RailsAdmin.config Draft do
         edit do
           field :notes do
-            codemirror true
+            codemirror do 
+              { :mode => :xml }
+            end
           end
         end
       end
